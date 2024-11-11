@@ -21,7 +21,7 @@ function Seats() {
   }, [token]);
 
   const toggleSeatSelection = (seatId, isBooked) => {
-    if (isBooked) return; // Prevent selecting a booked seat
+    if (isBooked) return; 
     setSelectedSeats((prev) =>
       prev.includes(seatId)
         ? prev.filter((id) => id !== seatId)
@@ -36,11 +36,11 @@ function Seats() {
     const result = await bookSeats(selectedSeats, token);
     alert("Seats Booked Successfully.");
     if (result.error) {
-      // Show error message about seat conflict
+      
       alert(result.error);
     } else if (result.message) {
       setSelectedSeats([]);
-      await fetchSeats(); // Refresh seat data to reflect current availability
+      await fetchSeats(); 
       navigate("/seats");
     }
   };

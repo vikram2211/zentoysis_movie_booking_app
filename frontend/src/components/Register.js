@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { registerUser } from "../Services/api.js";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "../App.css";
 
 function Register() {
@@ -8,14 +8,14 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await registerUser(name, email, password);
     setMessage(result.message || result.error);
     if (result.message) {
-      navigate("/login"); // Redirect to login page on successful registration
+      navigate("/login"); 
     }
   };
 

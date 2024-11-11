@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/Register.js";
@@ -11,7 +10,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Routes for Register, Login, Seats, Booking */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />

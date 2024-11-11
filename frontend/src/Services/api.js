@@ -1,6 +1,5 @@
-// src/services/api.js
 
-const BASE_URL = "http://localhost:5000"; // Adjust if needed
+const BASE_URL = "http://localhost:5000"; 
 
 export const registerUser = async (name, email, password) => {
   const response = await fetch(`${BASE_URL}/register`, {
@@ -40,12 +39,10 @@ export const bookSeats = async (seatIds, token) => {
 };
 
 export const logout = () => {
-    // Remove the token from localStorage to log out the user
+
     localStorage.removeItem("token");
     
-    // Optionally, if you're using sessionStorage or other methods, you can clear them as well
     sessionStorage.removeItem("token");
   
-    // Optionally, return a message or status
     return { message: "Logout successful" };
   };

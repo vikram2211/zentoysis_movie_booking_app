@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { loginUser } from "../Services/api.js";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 import "../App.css";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,14 +16,13 @@ function Login() {
       localStorage.setItem("token", result.token);
       setMessage("Login successful");
       navigate("/add-seats");
-    //   navigate("/seats"); // Redirect to Seats component on successful login
     } else {
       setMessage(result.error);
     }
   };
 
   const handleRegisterRedirect = () => {
-    navigate("/register"); // Navigate to register page
+    navigate("/register"); 
   };
 
   return (
